@@ -53,7 +53,7 @@ html, body{
   margin: 0.4em 0.5em;
 }
 .estimate--letter{
-    font-size: 15em;
+    font-size: 30vw;
     left: 0;
     line-height: 200px;
     margin: auto;
