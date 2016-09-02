@@ -7,19 +7,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <div class="estimate estimate--buttons">
-        <button class="estimate__button" value="XS">XS</button>        
-        <button class="estimate__button" value="S">S</button>        
-        <button class="estimate__button" value="M">M</button>       
-        <button class="estimate__button" value="L">L</button>        
-        <button class="estimate__button" value="XL">XL</button>
+    <div id="main" class="out">
+        <div class="estimate estimate--buttons">
+            <button class="estimate__button" value="XS">XS</button>        
+            <button class="estimate__button" value="S">S</button>        
+            <button class="estimate__button" value="M">M</button>       
+            <button class="estimate__button" value="L">L</button>        
+            <button class="estimate__button" value="XL">XL</button>
+        </div>
+            
+        <div class="shirt shirt--bg estimate initial-hidden">
+            <span class="estimate--letter">M</span>
+        </div>
     </div>
-    
-    <div class="shirt shirt--bg estimate initial-hidden">
-        <span class="estimate--letter">M</span>
+    <div id="numbers" class="">
+        <div class="estimate estimate--buttons">
+            </div>
+        <div class="number selected">
+                <div class="card-border">
+                <div class="small">
+                    </div>
+                <div class="large"></div>
+               
+                <div class="small">
+                </div
+                 </div>
+            </div>
     </div>
-    
     <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <script src="hammer.min.js"></script>
+    
     <script src="app.js"></script>
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

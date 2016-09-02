@@ -5,6 +5,64 @@ html, body{
     padding: 0;
 }
 
+#main{
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
+}
+#numbers{
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
+}
+.number{
+    display: none;
+}
+.card-border{
+    border: 4vw #07526e solid;
+    margin: 1vw;
+    position: absolute;
+    bottom: 1vw;
+    left: 1vw;
+    top: 1vw;
+    right: 1vw;
+    border-radius: 1em;
+    
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+    align-content:  stretch;
+    text-align: center;
+}
+
+.card-border .small{
+    text-align: right;
+}
+.card-border .small:first-child{
+    text-align: left;
+}
+
+.number .large{
+    font-size: 50vw;
+}
+
+.number .small{
+    font-size: 20vw;
+}
+#main.out{
+    left: -100%;    
+}
+
+#numbers.out{
+    left: 100%;
+}
+
 .initial-hidden{
     display: none;   
 }
