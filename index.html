@@ -4,40 +4,23 @@
     <meta charset="UTF-8">
     <title>T-Shirt Estimates</title>
     <link rel="stylesheet" href="app.css">
+    <script src="hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-touch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RyanMullins-angular-hammer/2.2.0/angular.hammer.min.js"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
-    <div id="main" class="out">
-        <div class="estimate estimate--buttons">
-            <button class="estimate__button" value="XS">XS</button>        
-            <button class="estimate__button" value="S">S</button>        
-            <button class="estimate__button" value="M">M</button>       
-            <button class="estimate__button" value="L">L</button>        
-            <button class="estimate__button" value="XL">XL</button>
-        </div>
-            
-        <div class="shirt shirt--bg estimate initial-hidden">
-            <span class="estimate--letter">M</span>
-        </div>
-    </div>
-    <div id="numbers" class="">
-        <div class="estimate estimate--buttons">
-            </div>
-        <div class="number selected">
-                <div class="card-border">
-                <div class="small">
-                    </div>
-                <div class="large"></div>
-               
-                <div class="small">
-                </div
-                 </div>
-            </div>
-    </div>
-    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
-    <script src="hammer.min.js"></script>
+<body ng-app="tse">
     
-    <script src="app.js"></script>
+
+<main-component></main-component>
+
+
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    
+    <!--<script src="app.js"></script>-->
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -48,5 +31,12 @@
   ga('send', 'pageview');
 
 </script>
+
+
+    <script src="app/app.module.js"></script>
+    <script src="app/main.component.js"></script>
+    <script src="app/numbers/numbers.component.js"></script>
+    <script src="app/shirts/shirts.component.js"></script>
+    
 </body>
 </html>

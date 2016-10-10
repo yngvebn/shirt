@@ -1,0 +1,17 @@
+<div class="estimate estimate--buttons" ng-if="!$ctrl.selected">
+    <button class="estimate__button" value="number" ng-click="$ctrl.selected = number" ng-repeat="number in $ctrl.numbers">
+                {{number}}
+            </button>
+</div>
+<div class="number selected" ng-if="$ctrl.selected">
+    <div class="card-border" ng-click="$ctrl.selected = ''">
+        <div class="small">
+            {{$ctrl.selected}}
+        </div>
+        <div class="large">{{$ctrl.selected}}</div>
+
+        <div class="small">
+            {{$ctrl.selected}}
+        </div>
+    </div>
+</div>
