@@ -3,17 +3,17 @@ html, body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body *{
+box-sizing: border-box;
 }
 
 
 .card-border{
     border: 4vw #07526e solid;
     margin: 1vw;
-    position: absolute;
-    bottom: 1vw;
-    left: 1vw;
-    top: 1vw;
-    right: 1vw;
     border-radius: 1em;
     
     display: flex;
