@@ -1,0 +1,39 @@
+@import '/node_modules/@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+    
+}
+
+.my-app{
+display: flex; /* or inline-flex */
+flex-direction: column;
+height: 100%;
+}
+
+.estimate{
+  flex-grow: 1;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.estimates-container{
+  width: 200%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0.2em;
+  > * {
+    width: 49%;
+    display: inline-block;
+    height: 100%;
+  }
+  transition: transform cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+  &.numbers{
+    transform: translate3d(0%, 0, 0)
+  }
+  &.shirts{
+    transform: translate3d(-49%, 0, 0)
+  }
+}

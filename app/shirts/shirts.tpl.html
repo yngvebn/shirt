@@ -1,7 +1,0 @@
-<div class="estimate estimate--buttons" ng-if="!$ctrl.selected">
-    <button class="estimate__button" value="{{size}}" ng-repeat="size in $ctrl.sizes" ng-click="$ctrl.selected = size">{{size}}</button>
-</div>
-
-<div class="shirt shirt--bg estimate" ng-if="$ctrl.selected">
-    <span class="estimate--letter" ng-click="$ctrl.selected = ''">{{$ctrl.selected}}</span>
-</div>
