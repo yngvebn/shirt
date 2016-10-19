@@ -1,6 +1,5 @@
 // Place your settings in this file to overwrite default and user settings.
 {
     "workbench.editor.showIcons": true,
-    "editor.formatOnSave": true,
-    "typescript.tsdk": "2.0.3"
+    "editor.formatOnSave": true
 }
