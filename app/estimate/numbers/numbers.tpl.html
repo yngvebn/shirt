@@ -1,8 +1,10 @@
 <div class="numbers--buttons" [class.selected]="isSelectedNumber">
-	<button *ngFor="let number of numbers" (click)="select(number)" md-raised-button color="accent">{{number}}</button>
+	<button *ngFor="let number of numbers" (click)="select(number)" md-raised-button color="primary">{{number}}</button>
 </div>
-<div class="number--selected" *ngIf="isSelectedNumber" (click)="select(0)" [@myAnimation]="isSelectedNumber">
-	<div class="number--container background--ninja ninja-5">
+<div (click)="select(0)" class="number--selected" *ngIf="isSelectedNumber" [@myAnimation]="isSelectedNumber">
+	<span></span>
+	<div class="number--container">
 		{{selectedNumber}}
 	</div>
+	<span></span>
 </div>

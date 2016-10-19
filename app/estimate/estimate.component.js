@@ -15,7 +15,13 @@ var EstimateComponent = (function () {
         this.transform = 'translate3d(0, 0, 0)';
         this.currentDelta = 0;
     }
+    EstimateComponent.prototype.estimateSelected = function (val) {
+        console.log('currentSelection', this.currentSelection);
+        this.currentSelection = val;
+    };
     EstimateComponent.prototype.doSwipe = function (ev) {
+        if (this.currentSelection === '' || this.currentSelection === 0)
+            return;
         if (ev.gesture === 'pan') {
             var deltaPercent = ((this.currentDelta + ev.event.deltaX) * 100 / ev.element.offsetWidth) * 200 / 100;
             this.transform = "translate3d(" + deltaPercent + "vw, 0, 0)";

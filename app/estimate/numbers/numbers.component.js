@@ -13,9 +13,11 @@ var Fibonacci_1 = require('./Fibonacci');
 var NumbersComponent = (function () {
     function NumbersComponent() {
         this.selectedNumber = 0;
+        this.numberSelected = new core_1.EventEmitter();
         this.numbers = this.unique(new Fibonacci_1.Fibonacci().run(7));
     }
     NumbersComponent.prototype.select = function (num) {
+        this.numberSelected.emit(num);
         if (this.selectedNumber === num && this.isSelectedNumber) {
             this.selectedNumber = 0;
             this.isSelectedNumber = false;
@@ -34,6 +36,10 @@ var NumbersComponent = (function () {
         }
         return arr;
     };
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], NumbersComponent.prototype, "numberSelected", void 0);
     NumbersComponent = __decorate([
         core_1.Component({
             selector: 'numbers',
@@ -41,12 +47,12 @@ var NumbersComponent = (function () {
             animations: [
                 core_1.trigger('myAnimation', [
                     core_1.transition(':enter', [
-                        core_1.style({ transform: 'scale(0)' }),
-                        core_1.animate('125ms  ease-in', core_1.style({ transform: 'scale(1)' }))
+                        core_1.style({ transform: 'scale(0)', opacity: 0 }),
+                        core_1.animate('125ms  ease-in', core_1.style({ transform: 'scale(1)', opacity: 1 }))
                     ]),
                     core_1.transition(':leave', [
-                        core_1.style({ transform: 'scale(1)' }),
-                        core_1.animate('125ms ease-in', core_1.style({ transform: 'scale(0)' })),
+                        core_1.style({ transform: 'scale(1)', opacity: 1 }),
+                        core_1.animate('125ms ease-in', core_1.style({ transform: 'scale(0)', opacity: 0 })),
                     ])
                 ])
             ],

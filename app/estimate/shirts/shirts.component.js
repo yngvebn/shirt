@@ -11,11 +11,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ShirtsComponent = (function () {
     function ShirtsComponent() {
+        this.selectedNumber = '';
+        this.numbers = ['XS', 'S', 'M', 'L', 'XL'];
     }
+    ShirtsComponent.prototype.select = function (num) {
+        if (this.selectedNumber === num && this.isSelectedNumber) {
+            this.selectedNumber = '';
+            this.isSelectedNumber = false;
+        }
+        else {
+            this.selectedNumber = num;
+            this.isSelectedNumber = this.selectedNumber !== '';
+        }
+    };
     ShirtsComponent = __decorate([
         core_1.Component({
             selector: 'shirts',
-            templateUrl: '/app/estimate/shirts/shirts.tpl.html'
+            templateUrl: '/app/estimate/shirts/shirts.tpl.html',
+            animations: [
+                core_1.trigger('myAnimation', [
+                    core_1.transition(':enter', [
+                        core_1.style({ transform: 'scale(0)', opacity: 0 }),
+                        core_1.animate('125ms  ease-in', core_1.style({ transform: 'scale(1)', opacity: 1 }))
+                    ]),
+                    core_1.transition(':leave', [
+                        core_1.style({ transform: 'scale(1)', opacity: 1 }),
+                        core_1.animate('125ms ease-in', core_1.style({ transform: 'scale(0)', opacity: 0 })),
+                    ])
+                ])
+            ],
         }), 
         __metadata('design:paramtypes', [])
     ], ShirtsComponent);

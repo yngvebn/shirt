@@ -10,7 +10,16 @@ export class EstimateComponent {
     isNumbersActive: boolean = true;
     transform: string = 'translate3d(0, 0, 0)';
     currentDelta: number = 0;
+    currentSelection: any;
+
+    estimateSelected(val: any) {
+
+        console.log('currentSelection', this.currentSelection);
+        this.currentSelection = val;
+    }
+
     doSwipe(ev: any) {
+        if (this.currentSelection === '' || this.currentSelection === 0) return;
         if (ev.gesture === 'pan') {
             let deltaPercent = ((this.currentDelta + ev.event.deltaX) * 100 / ev.element.offsetWidth) * 200 / 100;
             this.transform = `translate3d(${deltaPercent}vw, 0, 0)`;

@@ -19,7 +19,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<main-menu class=\"main-menu\"></main-menu>\n            <estimate class=\"estimate\"></estimate>"
+            template: "<estimate class=\"estimate\"></estimate>"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

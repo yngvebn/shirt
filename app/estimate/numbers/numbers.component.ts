@@ -1,5 +1,7 @@
-import { Component, trigger, transition, style, animate } from '@angular/core';
+import { Component, trigger, transition, style, animate, Output, EventEmitter } from '@angular/core';
 import { Fibonacci } from './Fibonacci';
+
+import { HammerGesturesDirective } from "../../hammer/hammer-gestures.directive";
 @Component({
     selector: 'numbers',
     templateUrl: '/app/estimate/numbers/numbers.tpl.html',
@@ -7,12 +9,12 @@ import { Fibonacci } from './Fibonacci';
         trigger(
             'myAnimation', [
                 transition(':enter', [
-                    style({ transform: 'scale(0)' }),
-                    animate('125ms  ease-in', style({ transform: 'scale(1)' }))
+                    style({ transform: 'scale(0)', opacity: 0 }),
+                    animate('125ms  ease-in', style({ transform: 'scale(1)', opacity: 1 }))
                 ]),
                 transition(':leave', [
-                    style({ transform: 'scale(1)' }),
-                    animate('125ms ease-in', style({ transform: 'scale(0)' })),
+                    style({ transform: 'scale(1)', opacity: 1 }),
+                    animate('125ms ease-in', style({ transform: 'scale(0)', opacity: 0 })),
                 ])
             ]
         )
@@ -23,12 +25,15 @@ export class NumbersComponent {
     numbers: Array<number>;
     isSelectedNumber: boolean;
     selectedNumber: number = 0;
+    @Output() numberSelected: EventEmitter<number> = new EventEmitter();
 
     constructor() {
         this.numbers = this.unique(new Fibonacci().run(7));
     }
 
     select(num: number) {
+
+        this.numberSelected.emit(num);
         if (this.selectedNumber === num && this.isSelectedNumber) {
             this.selectedNumber = 0;
             this.isSelectedNumber = false;
@@ -38,6 +43,7 @@ export class NumbersComponent {
             this.isSelectedNumber = this.selectedNumber > 0;
         }
     }
+
 
     unique(numbers: Array<number>): Array<number> {
         var arr = [];
