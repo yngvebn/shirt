@@ -10,16 +10,19 @@ export class EstimateComponent {
     isNumbersActive: boolean = true;
     transform: string = 'translate3d(0, 0, 0)';
     currentDelta: number = 0;
-    currentSelection: any;
+    currentNumber: number;
+    currentShirt: string;
 
-    estimateSelected(val: any) {
+    shirtEstimateSelected(val: any) {
+        this.currentShirt = val;
+    }
 
-        console.log('currentSelection', this.currentSelection);
-        this.currentSelection = val;
+    numberEstimateSelected(val: any) {
+        this.currentNumber = val;
     }
 
     doSwipe(ev: any) {
-        if (this.currentSelection === '' || this.currentSelection === 0) return;
+        if ((this.currentShirt && this.currentShirt !== '') || this.currentNumber > 0) return;
         if (ev.gesture === 'pan') {
             let deltaPercent = ((this.currentDelta + ev.event.deltaX) * 100 / ev.element.offsetWidth) * 200 / 100;
             this.transform = `translate3d(${deltaPercent}vw, 0, 0)`;

@@ -15,12 +15,14 @@ var EstimateComponent = (function () {
         this.transform = 'translate3d(0, 0, 0)';
         this.currentDelta = 0;
     }
-    EstimateComponent.prototype.estimateSelected = function (val) {
-        console.log('currentSelection', this.currentSelection);
-        this.currentSelection = val;
+    EstimateComponent.prototype.shirtEstimateSelected = function (val) {
+        this.currentShirt = val;
+    };
+    EstimateComponent.prototype.numberEstimateSelected = function (val) {
+        this.currentNumber = val;
     };
     EstimateComponent.prototype.doSwipe = function (ev) {
-        if (this.currentSelection === '' || this.currentSelection === 0)
+        if ((this.currentShirt && this.currentShirt !== '') || this.currentNumber > 0)
             return;
         if (ev.gesture === 'pan') {
             var deltaPercent = ((this.currentDelta + ev.event.deltaX) * 100 / ev.element.offsetWidth) * 200 / 100;

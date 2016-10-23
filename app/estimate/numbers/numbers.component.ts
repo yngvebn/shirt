@@ -32,7 +32,6 @@ export class NumbersComponent {
     }
 
     select(num: number) {
-
         this.numberSelected.emit(num);
         if (this.selectedNumber === num && this.isSelectedNumber) {
             this.selectedNumber = 0;

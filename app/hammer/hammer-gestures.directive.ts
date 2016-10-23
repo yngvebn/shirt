@@ -6,10 +6,8 @@ export class HammerGesturesDirective implements AfterViewInit {
     @Output() onGesture = new EventEmitter();
     static hammerInitialized = false;
     constructor(private el: ElementRef) {
-        console.log('hammer-gestures');
     }
     ngAfterViewInit() {
-        console.log(HammerGesturesDirective.hammerInitialized);
         if (!HammerGesturesDirective.hammerInitialized) {
 
             let hammertime = new Hammer(this.el.nativeElement);

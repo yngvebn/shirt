@@ -13,11 +13,9 @@ var HammerGesturesDirective = (function () {
     function HammerGesturesDirective(el) {
         this.el = el;
         this.onGesture = new core_1.EventEmitter();
-        console.log('hammer-gestures');
     }
     HammerGesturesDirective.prototype.ngAfterViewInit = function () {
         var _this = this;
-        console.log(HammerGesturesDirective.hammerInitialized);
         if (!HammerGesturesDirective.hammerInitialized) {
             var hammertime = new Hammer(this.el.nativeElement);
             hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });

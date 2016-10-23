@@ -12,9 +12,11 @@ var core_1 = require('@angular/core');
 var ShirtsComponent = (function () {
     function ShirtsComponent() {
         this.selectedNumber = '';
+        this.shirtSelected = new core_1.EventEmitter();
         this.numbers = ['XS', 'S', 'M', 'L', 'XL'];
     }
     ShirtsComponent.prototype.select = function (num) {
+        this.shirtSelected.emit(num);
         if (this.selectedNumber === num && this.isSelectedNumber) {
             this.selectedNumber = '';
             this.isSelectedNumber = false;
@@ -24,6 +26,10 @@ var ShirtsComponent = (function () {
             this.isSelectedNumber = this.selectedNumber !== '';
         }
     };
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], ShirtsComponent.prototype, "shirtSelected", void 0);
     ShirtsComponent = __decorate([
         core_1.Component({
             selector: 'shirts',

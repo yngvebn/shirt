@@ -1,4 +1,4 @@
-import { Component, trigger, transition, style, animate } from '@angular/core';
+import { Component, trigger, transition, style, animate, Output, EventEmitter } from '@angular/core';
 @Component({
     selector: 'shirts',
     templateUrl: '/app/estimate/shirts/shirts.tpl.html',
@@ -18,15 +18,17 @@ import { Component, trigger, transition, style, animate } from '@angular/core';
     ],
 })
 export class ShirtsComponent {
-numbers: Array<string>;
+    numbers: Array<string>;
     isSelectedNumber: boolean;
     selectedNumber: string = '';
+    @Output() shirtSelected: EventEmitter<string> = new EventEmitter();
 
     constructor() {
         this.numbers = ['XS', 'S', 'M', 'L', 'XL'];
     }
 
     select(num: string) {
+        this.shirtSelected.emit(num);
         if (this.selectedNumber === num && this.isSelectedNumber) {
             this.selectedNumber = '';
             this.isSelectedNumber = false;
