@@ -7,12 +7,13 @@
     "start": "tsc && npm run watch",
     "watch": "concurrently \"npm run tsc:w\" \"npm run lite\" \"npm run watch-css\"",
     "lite": "lite-server",
-    "postinstall": "typings install",
+    "postinstall": "typings install && npm run build",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings",
     "build-css": "node-sass --include-path scss scss/main.scss public/css/main.css",
-    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "build": "tsc && npm run build-css"
   },
   "repository": {
     "type": "git",
