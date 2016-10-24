@@ -21,14 +21,13 @@ export class ShirtsComponent {
     numbers: Array<string>;
     isSelectedNumber: boolean;
     selectedNumber: string = '';
-    @Output() shirtSelected: EventEmitter<string> = new EventEmitter();
+    @Output() shirtSelected: EventEmitter<boolean> = new EventEmitter();
 
     constructor() {
         this.numbers = ['XS', 'S', 'M', 'L', 'XL'];
     }
 
     select(num: string) {
-        this.shirtSelected.emit(num);
         if (this.selectedNumber === num && this.isSelectedNumber) {
             this.selectedNumber = '';
             this.isSelectedNumber = false;
@@ -37,6 +36,8 @@ export class ShirtsComponent {
             this.selectedNumber = num;
             this.isSelectedNumber = this.selectedNumber !== '';
         }
+
+        this.shirtSelected.emit(this.isSelectedNumber);
     }
 
 }

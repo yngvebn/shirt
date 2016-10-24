@@ -25,14 +25,13 @@ export class NumbersComponent {
     numbers: Array<number>;
     isSelectedNumber: boolean;
     selectedNumber: number = 0;
-    @Output() numberSelected: EventEmitter<number> = new EventEmitter();
+    @Output() numberSelected: EventEmitter<boolean> = new EventEmitter();
 
     constructor() {
         this.numbers = this.unique(new Fibonacci().run(7));
     }
 
     select(num: number) {
-        this.numberSelected.emit(num);
         if (this.selectedNumber === num && this.isSelectedNumber) {
             this.selectedNumber = 0;
             this.isSelectedNumber = false;
@@ -41,6 +40,8 @@ export class NumbersComponent {
             this.selectedNumber = num;
             this.isSelectedNumber = this.selectedNumber > 0;
         }
+
+        this.numberSelected.emit(this.isSelectedNumber);
     }
 
 
