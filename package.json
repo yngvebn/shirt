@@ -39,21 +39,21 @@
     "angular-in-memory-web-api": "~0.1.5",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
-    "karma-phantomjs2-launcher": "^0.5.0",
+    "node-sass": "^3.10.1",
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-beta.12",
     "systemjs": "0.19.39",
-    "zone.js": "^0.6.25"
+    "typescript": "^2.0.3",
+    "zone.js": "^0.6.25",
+    "typings": "^1.4.0"
   },
   "devDependencies": {
     "concurrently": "^3.0.0",
     "gulp-inline-ng2-template": "^3.0.1",
     "jasmine": "^2.5.2",
     "lite-server": "^2.2.2",
-    "node-sass": "^3.10.1",
     "nodemon": "^1.11.0",
-    "typescript": "^2.0.3",
-    "typings": "^1.4.0",
+    "karma-phantomjs2-launcher": "^0.5.0",
     "wallaby-gulp-adapter": "0.0.1"
   }
 }
