@@ -7,13 +7,13 @@
     "startDev": "tsc && npm run watch",
     "watch": "concurrently \"npm run tsc:w\" \"npm run lite\" \"npm run watch-css\"",
     "lite": "lite-server",
-    "postinstall": "npm install typings -g && typings install && npm run build",
+    "postinstall": "npm run build",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings",
     "build-css": "node-sass --include-path scss scss/main.scss public/css/main.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
-    "build": "tsc && npm run build-css"
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -43,9 +43,25 @@
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-beta.12",
     "systemjs": "0.19.39",
-    "typescript": "^2.0.3",
     "zone.js": "^0.6.25",
-    "typings": "^1.4.0"
+    "typings": "^1.4.0",
+    "awesome-typescript-loader": "^3.0.0-beta.17",
+    "angular2-template-loader": "^0.6.0",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.24.1",
+    "json-loader": "^0.5.4",
+    "null-loader": "^0.1.1",
+    "raw-loader": "^0.5.1",
+    "to-string-loader": "^1.1.5",
+    "ts-helpers": "^1.1.2",
+    "typescript": "^2.1.4",
+    "wallaby-webpack": "^0.0.27",
+    "webpack": "2.2.0-rc.2",
+    "webpack-dev-server": "2.2.0-rc.0",
+    "css-loader": "^0.26.1",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1"
   },
   "devDependencies": {
     "concurrently": "^3.0.0",

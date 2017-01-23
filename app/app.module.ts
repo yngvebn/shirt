@@ -12,7 +12,17 @@ import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-br
 
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any>{
-    'swipe': { velocity: 0.4, threshold: 20 } // override default settings
+    'swipe': { velocity: 0.4, threshold: 20, direction: 2 | 4 }, // override default settings,
+    'pinch': { enable: false },
+    'rotate': { enable: false },
+    'pan': { velocity: 0.4, threshold: 20, direction: Hammer.DIRECTION_ALL }
+  }
+
+  buildHammer(element: HTMLElement) {
+    let mc = new Hammer(element, {
+      touchAction: "auto",
+    });
+    return mc;
   }
 }
 

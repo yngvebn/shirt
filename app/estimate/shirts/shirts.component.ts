@@ -1,7 +1,7 @@
 import { Component, trigger, transition, style, animate, Output, EventEmitter } from '@angular/core';
 @Component({
     selector: 'shirts',
-    templateUrl: '/app/estimate/shirts/shirts.tpl.html',
+    templateUrl: 'shirts.tpl.html',
     animations: [
         trigger(
             'myAnimation', [
@@ -21,7 +21,7 @@ export class ShirtsComponent {
     numbers: Array<string>;
     isSelectedNumber: boolean;
     selectedNumber: string = '';
-    @Output() shirtSelected: EventEmitter<boolean> = new EventEmitter();
+    @Output() shirtSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     constructor() {
         this.numbers = ['XS', 'S', 'M', 'L', 'XL'];

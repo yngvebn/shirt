@@ -1,5 +1,5 @@
-<section [class.numbers]="isNumbersActive" [class.shirts]="!isNumbersActive" [style.transform]="transform" class="estimates-container"
-	hammer-gestures (onGesture)="doSwipe($event)" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
-	<numbers (numberSelected)="numberEstimateSelected($event)" class="numbers"></numbers>
-	<shirts (shirtSelected)="shirtEstimateSelected($event)" class="numbers"></shirts>
+<section [class.numbers]="isNumbersActive" [class.shirts]="!isNumbersActive" class="estimates-container" hammer-gestures
+	(onGesture)="doSwipe($event)" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+<numbers (numberSelected)="numberEstimateSelected($event)" [style.transform]="transform" class="numbers"></numbers>
+<shirts (shirtSelected)="shirtEstimateSelected($event)" [style.transform]="transform" class="numbers"></shirts>
 </section>

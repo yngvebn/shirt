@@ -4,7 +4,8 @@ import { Fibonacci } from './Fibonacci';
 import { HammerGesturesDirective } from "../../hammer/hammer-gestures.directive";
 @Component({
     selector: 'numbers',
-    templateUrl: '/app/estimate/numbers/numbers.tpl.html',
+    styleUrls: ['numbers.component.scss'],
+    templateUrl: 'numbers.tpl.html',
     animations: [
         trigger(
             'myAnimation', [
@@ -25,10 +26,11 @@ export class NumbersComponent {
     numbers: Array<number>;
     isSelectedNumber: boolean;
     selectedNumber: number = 0;
-    @Output() numberSelected: EventEmitter<boolean> = new EventEmitter();
+    @Output() numberSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     constructor() {
-        this.numbers = this.unique(new Fibonacci().run(7));
+        this.numbers = this.unique(new Fibonacci().run(9));
+        this.numbers.push(Infinity)
     }
 
     select(num: number) {

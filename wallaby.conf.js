@@ -32,9 +32,9 @@ module.exports = function (wallaby) {
             '**/*.ts': wallaby.compilers.typeScript()
         },
         // inlining templates
-        preprocessors: {
-            'app/**/*.ts': require('wallaby-gulp-adapter')(require('gulp-inline-ng2-template')({ base: 'app', target: 'es5' }))
-        },
+        //preprocessors: {
+        //    'app/**/*.ts': require('wallaby-gulp-adapter')(require('gulp-inline-ng2-template')({ base: 'app', target: 'es5' }))
+        //},
         middleware: function (app, express) {
             app.use('/node_modules', express.static(require('path').join(__dirname, 'node_modules')));
         },

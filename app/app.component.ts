@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+
 @Component({
     selector: 'my-app',
-    template: `<estimate class="estimate"></estimate>`
+    template: `<estimate class="estimate"></estimate>`,
+    styleUrls: ['app.scss']
 })
 export class AppComponent {
     greeting: string;
