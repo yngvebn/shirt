@@ -1,0 +1,6 @@
+@import '~@angular/material/theming';
+@import '../../material';
+
+button{
+    background-color: mat-color($tse-app-primary, A400); 
+}

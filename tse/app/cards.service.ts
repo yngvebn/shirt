@@ -7,12 +7,10 @@ export class CardsService {
   constructor() { }
 
   public getCards(): Card[] {
-    return [1, 2, 5, 8, 13].map(i => {
+    return [1, 2, 5, 8, 13, 21].map(i => {
       return {
         id: i.toString(), content: i.toString()
       };
     });
   }
-
-
 }

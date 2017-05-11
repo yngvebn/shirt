@@ -1,3 +1,7 @@
-<button (click)="onSelect.emit(card)">
-  {{card.content}}
-</button>
+<div class="card-button">
+  <div (click)="onSelect.emit(card)" class="card-button__content">
+    <span>
+      {{card.content}}
+    </span>
+  </div>
+</div>

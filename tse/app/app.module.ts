@@ -1,3 +1,4 @@
+import { AppMaterialModule } from './material/material.module';
 import { CardsEffects } from './store/cards/cards.effects';
 import { CardsService } from './cards.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,15 +14,19 @@ import { reducer } from './store';
 import { CardSelectorComponent } from './card-selector/card-selector.component';
 import { CardButtonComponent } from './card-selector/card-button/card-button.component';
 import { SelectedCardComponent } from './card-selector/selected-card/selected-card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MainNavComponent } from './main-nav/main-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardSelectorComponent,
     CardButtonComponent,
-    SelectedCardComponent
+    SelectedCardComponent,
+    MainNavComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -29,6 +34,7 @@ import { SelectedCardComponent } from './card-selector/selected-card/selected-ca
     StoreModule.provideStore(reducer),
     EffectsModule.run(CardsEffects),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
+    AppMaterialModule
   ],
   providers: [CardsService],
   bootstrap: [AppComponent]
