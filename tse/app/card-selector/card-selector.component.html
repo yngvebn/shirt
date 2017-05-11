@@ -1,0 +1,4 @@
+<p>
+  <tse-card-button *ngFor="let card of cards$ | async" [card]="card" (onSelect)="cardSelected($event)"></tse-card-button>
+</p>
+<tse-selected-card *ngIf="isCardSelected$ | async" [card]="selectedCard$ | async" (onDismiss)="resetSelection()"></tse-selected-card>
