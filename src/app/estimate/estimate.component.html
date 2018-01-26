@@ -1,0 +1,5 @@
+<section [class.numbers]="isNumbersActive" [class.shirts]="!isNumbersActive" [style.transform]="transform" class="estimates-container"
+	appHammerGestures (gesture)="doSwipe($event)" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+	<app-numbers (numberSelected)="numberEstimateSelected($event)" class="numbers"></app-numbers>
+	<app-shirts (shirtSelected)="shirtEstimateSelected($event)" class="numbers"></app-shirts>
+</section>

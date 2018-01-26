@@ -1,0 +1,12 @@
+<div class="numbers--buttons" [class.selected]="isSelectedNumber">
+	<button *ngFor="let number of numbers" (click)="select(number)" md-raised-button>{{number}}</button>
+</div>
+<div class="number--selected" *ngIf="isSelectedNumber" [@myAnimation]="isSelectedNumber">
+	<div class="card--border" (click)="select(0)">
+		<span></span>
+		<div class="number--container">
+			{{selectedNumber}}
+		</div>
+		<span></span>
+	</div>
+</div>
